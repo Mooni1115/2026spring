@@ -1,0 +1,49 @@
+{
+  "business_type": "education",
+  "description": "A business built around teaching, explaining, coaching, or helping users learn or improve a skill.",
+  "best_for": [
+    "Users with subject knowledge or strong explanatory ability",
+    "Users comfortable with communication and trust-building",
+    "Users who can identify a specific learner pain point"
+  ],
+  "bad_for": [
+    "Users who dislike interaction entirely",
+    "Users with no identifiable expertise or teachable framework"
+  ],
+  "common_formats": [
+    "1:1 coaching",
+    "small group class",
+    "digital study materials",
+    "recorded course",
+    "feedback service"
+  ],
+  "revenue_models": [
+    "one-time payment",
+    "subscription",
+    "coaching fee",
+    "digital resource sales"
+  ],
+  "mvp_examples": [
+    "A 60-minute pilot workshop",
+    "A problem-specific PDF guide",
+    "A small paid study session",
+    "A feedback-based mini service"
+  ],
+  "evaluation_points": [
+    "Does the target learner have a painful and specific need?",
+    "Why would they trust this provider?",
+    "Can the offer be narrowed to one result?"
+  ],
+  "major_risks": [
+    "Weak differentiation",
+    "Low willingness to pay",
+    "Overly broad target audience",
+    "Expertise not clearly demonstrated"
+  ],
+  "starter_next_steps": [
+    "Choose one learner segment",
+    "Define one concrete outcome",
+    "Design one small pilot offer",
+    "Test with 5 to 10 potential users"
+  ]
+}
