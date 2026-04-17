@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "description": "Rules used by the validator agent or validation module.",
+  "hard_constraints": [
+    "Do not claim guaranteed business success.",
+    "Do not invent market size numbers without evidence.",
+    "Do not provide legal or tax conclusions as if they are final advice.",
+    "Do not recommend high fixed-cost businesses to low-capital users unless explicitly justified.",
+    "Do not recommend time-intensive businesses to users with very low available time unless explicitly justified."
+  ],
+  "required_output_elements": [
+    "fit_reason",
+    "assumptions",
+    "risks",
+    "next_steps"
+  ],
+  "validation_questions": {
+    "user_fit": [
+      "Does the idea match the user's capital level?",
+      "Does the idea match the user's available time?",
+      "Does the idea match the user's skills or learnable adjacent skills?",
+      "Does the idea conflict with the user's stated preferences?"
+    ],
+    "market_check": [
+      "Is there a plausible demand signal?",
+      "Is the competitive environment too saturated for this user's profile?",
+      "Is there a realistic point of differentiation?"
+    ],
+    "execution_check": [
+      "Can this be tested within 2 to 4 weeks?",
+      "Can the user launch a basic MVP without excessive complexity?",
+      "Is the first step concrete rather than abstract?"
+    ],
+    "response_quality": [
+      "Are uncertain claims labeled as assumptions?",
+      "Are at least two risks stated clearly?",
+      "Are the next steps actionable?"
+    ]
+  }
+}
