@@ -1,3 +1,6 @@
+# Current Site Link
+https://mooni1115.github.io/2026spring/
+
 # Startup Idea Coach
 
 A prototype web application that recommends and structures business ideas based on a user's profile.
