@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "Rules for interpreting user profile inputs into business suitability signals.",
   "capital_rules": {
     "low": {
@@ -27,7 +27,7 @@
         "service_agency",
         "digital_product",
         "community",
-        "small_scale_hybrid"
+        "saas"
       ],
       "avoid_models": [
         "large_offline_expansion"
@@ -43,8 +43,7 @@
         "service_agency",
         "digital_product",
         "community",
-        "saas",
-        "hybrid_experience"
+        "saas"
       ],
       "avoid_models": [],
       "notes": [
@@ -62,7 +61,8 @@
       "avoid_models": [
         "high_touch_coaching",
         "daily_live_operations",
-        "offline_event_heavy_business"
+        "offline_event_heavy_business",
+        "community"
       ],
       "notes": [
         "Prefer leverage and repeatability over manual service delivery."
@@ -74,7 +74,8 @@
         "content",
         "digital_product",
         "service_agency",
-        "saas"
+        "saas",
+        "community"
       ],
       "avoid_models": [],
       "notes": [
@@ -87,7 +88,8 @@
         "service_agency",
         "community",
         "saas",
-        "hybrid_experience"
+        "digital_product",
+        "content"
       ],
       "avoid_models": [],
       "notes": [
@@ -135,7 +137,6 @@
       "preferred_models": [
         "education",
         "community",
-        "hybrid_experience",
         "service_agency"
       ]
     },
@@ -144,8 +145,8 @@
         "education",
         "community",
         "service_agency",
-        "hybrid_experience",
-        "digital_product"
+        "digital_product",
+        "content"
       ]
     }
   }
