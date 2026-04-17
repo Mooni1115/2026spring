@@ -1,0 +1,24 @@
+{
+  "idea_title": "",
+  "business_type": "",
+  "summary": "",
+  "fit_reason": [],
+  "assumptions": [],
+  "target_customer": {
+    "primary": "",
+    "secondary": ""
+  },
+  "problem_statement": "",
+  "solution_outline": "",
+  "value_proposition": "",
+  "revenue_model": "",
+  "mvp": "",
+  "channels": [],
+  "risks": [],
+  "next_steps": [],
+  "confidence": {
+    "user_fit": 0.0,
+    "market_confidence": 0.0,
+    "execution_feasibility": 0.0
+  }
+}
