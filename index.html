@@ -306,29 +306,38 @@
         education,
         content,
         saas,
+        digitalProduct,
+        serviceAgency,
+        community,
         ideaTemplate
-      ] = await Promise.all([
-        loadJSON("./knowledge_base/core/startup_principles.json"),
-        loadJSON("./knowledge_base/core/validation_rules.json"),
-        loadJSON("./knowledge_base/user_interpretation/profile_rules.json"),
-        loadJSON("./knowledge_base/business_types/education.json"),
-        loadJSON("./knowledge_base/business_types/content.json"),
-        loadJSON("./knowledge_base/business_types/saas.json"),
-        loadJSON("./knowledge_base/templates/idea_output_template.json")
-      ]);
+    ] = await Promise.all([
+      loadJSON("./knowledge_base/core/startup_principles.json"),
+      loadJSON("./knowledge_base/core/validation_rules.json"),
+      loadJSON("./knowledge_base/user_interpretation/profile_rules.json"),
+      loadJSON("./knowledge_base/business_types/education.json"),
+      loadJSON("./knowledge_base/business_types/content.json"),
+      loadJSON("./knowledge_base/business_types/saas.json"),
+      loadJSON("./knowledge_base/business_types/digital_product.json"),
+      loadJSON("./knowledge_base/business_types/service_agency.json"),
+      loadJSON("./knowledge_base/business_types/community.json"),
+      loadJSON("./knowledge_base/templates/idea_output_template.json")
+    ]);
 
-      knowledgeBase = {
-        startupPrinciples,
-        validationRules,
-        profileRules,
-        businessTypes: {
-          education,
-          content,
-          saas
-        },
-        ideaTemplate
-      };
-    }
+    knowledgeBase = {
+      startupPrinciples,
+      validationRules,
+      profileRules,
+      businessTypes: {
+        education,
+        content,
+        saas,
+        digital_product: digitalProduct,
+        service_agency: serviceAgency,
+        community
+      },
+      ideaTemplate
+    };
+  }
 
     function setStatus(message, isError = false) {
       appStatus.textContent = message;
@@ -356,41 +365,59 @@
     }
 
     function getKeywordBoosts(profile) {
-      const combined = [
-        profile.major,
-        profile.interests,
-        profile.skills,
-        profile.notes
-      ].join(" ").toLowerCase();
+  const combined = [
+    profile.major,
+    profile.interests,
+    profile.skills,
+    profile.notes
+  ].join(" ").toLowerCase();
 
-      const boosts = {
-        education: 0,
-        content: 0,
-        saas: 0
-      };
+  const boosts = {
+    education: 0,
+    content: 0,
+    saas: 0,
+    digital_product: 0,
+    service_agency: 0,
+    community: 0
+  };
 
-      if (containsAny(combined, ["영어", "english", "교육", "teaching", "글쓰기", "writing", "튜터", "학습"])) {
-        boosts.education += 3;
-      }
+  if (containsAny(combined, ["영어", "english", "교육", "teaching", "글쓰기", "writing", "튜터", "학습"])) {
+    boosts.education += 3;
+  }
 
-      if (containsAny(combined, ["콘텐츠", "content", "sns", "영상", "편집", "브랜딩", "마케팅", "뉴스레터"])) {
-        boosts.content += 3;
-      }
+  if (containsAny(combined, ["콘텐츠", "content", "sns", "영상", "편집", "브랜딩", "마케팅", "뉴스레터"])) {
+    boosts.content += 3;
+  }
 
-      if (containsAny(combined, ["개발", "코딩", "프로그래밍", "python", "html", "자동화", "생산성", "tool", "app", "saas"])) {
-        boosts.saas += 3;
-      }
+  if (containsAny(combined, ["개발", "코딩", "프로그래밍", "python", "html", "자동화", "생산성", "tool", "app", "saas"])) {
+    boosts.saas += 3;
+  }
 
-      return boosts;
-    }
+  if (containsAny(combined, ["템플릿", "전자책", "ebook", "자료집", "pdf", "가이드", "노션", "프롬프트"])) {
+    boosts.digital_product += 3;
+  }
+
+  if (containsAny(combined, ["대행", "관리", "편집", "디자인", "운영", "리서치", "첨삭", "번역"])) {
+    boosts.service_agency += 3;
+  }
+
+  if (containsAny(combined, ["커뮤니티", "모임", "스터디", "멤버십", "그룹", "네트워킹", "동아리"])) {
+    boosts.community += 3;
+  }
+
+  return boosts;
+}
 
     function scoreBusinessTypes(profile) {
       const rules = knowledgeBase.profileRules;
       const scores = {
-        education: 0,
-        content: 0,
-        saas: 0
-      };
+  education: 0,
+  content: 0,
+  saas: 0,
+  digital_product: 0,
+  service_agency: 0,
+  community: 0
+};
 
       const matchedNotes = [];
 
@@ -461,28 +488,40 @@
       const template = JSON.parse(JSON.stringify(knowledgeBase.ideaTemplate));
 
       const titleMap = {
-        education: "Problem-Focused Education Offer",
-        content: "Niche Content / Curation Product",
-        saas: "Micro SaaS for a Repetitive Problem"
-      };
+  education: "Problem-Focused Education Offer",
+  content: "Niche Content / Curation Product",
+  saas: "Micro SaaS for a Repetitive Problem",
+  digital_product: "Reusable Digital Product for a Specific Need",
+  service_agency: "Skill-Based Service Offer for a Clear Client Problem",
+  community: "Niche Community / Cohort-Based Offer"
+};
 
-      const summaryMap = {
-        education: "특정 학습자 집단의 분명한 문제를 해결하는 작은 교육형 상품 또는 서비스",
-        content: "좁은 관심사를 가진 사용자에게 유용한 정보를 꾸준히 큐레이션하거나 패키징하는 모델",
-        saas: "반복적인 문제를 단순한 웹 도구나 자동화 서비스로 해결하는 모델"
-      };
+const summaryMap = {
+  education: "특정 학습자 집단의 분명한 문제를 해결하는 작은 교육형 상품 또는 서비스",
+  content: "좁은 관심사를 가진 사용자에게 유용한 정보를 꾸준히 큐레이션하거나 패키징하는 모델",
+  saas: "반복적인 문제를 단순한 웹 도구나 자동화 서비스로 해결하는 모델",
+  digital_product: "재사용 가능한 디지털 자료를 만들어 반복 판매하는 저비용 모델",
+  service_agency: "특정 고객의 실무 문제를 직접 해결해주는 서비스형 모델",
+  community: "공통 목표나 관심사를 가진 사람들을 모아 반복 가치를 제공하는 모델"
+};
 
-      const customerMap = {
-        education: "특정 시험·기술·문제 해결이 필요한 학습자",
-        content: "특정 주제에 꾸준히 시간을 쓰는 니치 사용자",
-        saas: "반복 업무나 귀찮은 워크플로를 가진 사용자"
-      };
+const customerMap = {
+  education: "특정 시험·기술·문제 해결이 필요한 학습자",
+  content: "특정 주제에 꾸준히 시간을 쓰는 니치 사용자",
+  saas: "반복 업무나 귀찮은 워크플로를 가진 사용자",
+  digital_product: "작은 문제를 빠르게 해결할 자료를 원하는 사용자",
+  service_agency: "직접 하기 번거롭거나 어려운 업무를 맡기고 싶은 클라이언트",
+  community: "같은 목표, 고민, 취향을 공유하는 특정 집단"
+};
 
-      const revenueMap = {
-        education: type.revenue_models[0] || "one-time payment",
-        content: type.revenue_models[0] || "subscription",
-        saas: type.revenue_models[0] || "subscription"
-      };
+const revenueMap = {
+  education: type.revenue_models[0] || "one-time payment",
+  content: type.revenue_models[0] || "subscription",
+  saas: type.revenue_models[0] || "subscription",
+  digital_product: type.revenue_models[0] || "one-time payment",
+  service_agency: type.revenue_models[0] || "per-project fee",
+  community: type.revenue_models[0] || "membership fee"
+};
 
       template.idea_title = titleMap[typeKey];
       template.business_type = typeKey;
