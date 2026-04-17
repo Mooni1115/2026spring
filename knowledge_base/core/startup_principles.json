@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "description": "All business ideas must be evaluated against these core startup principles.",
+  "principles": {
+    "customer": [
+      "The target customer must be clearly identifiable.",
+      "The customer should experience the problem repeatedly or intensely.",
+      "The customer group should be reachable through realistic channels."
+    ],
+    "problem": [
+      "The problem must be concrete, not vague or generic.",
+      "The problem should involve time loss, money loss, inconvenience, or emotional frustration.",
+      "The problem should already exist before the product is introduced."
+    ],
+    "solution": [
+      "The proposed solution must directly address the stated problem.",
+      "The solution must be explainable in one or two sentences.",
+      "The solution should be reducible to a minimum viable version."
+    ],
+    "value_proposition": [
+      "The business must offer a clear reason for users to choose it over existing alternatives.",
+      "The difference should be practical, not merely stylistic.",
+      "The benefit should be understandable without expert knowledge."
+    ],
+    "revenue_model": [
+      "The way the business earns money must be explicit.",
+      "The payment logic should match customer behavior.",
+      "The initial revenue model should be simple enough to test quickly."
+    ],
+    "mvp": [
+      "The first version should test demand, not aim for completeness.",
+      "Speed of validation is more important than polish.",
+      "The MVP should answer whether users care enough to try or pay."
+    ],
+    "risk": [
+      "Every idea must include at least two concrete risks.",
+      "Success probability must never be stated as certain.",
+      "Any unverified claim must be labeled as a hypothesis."
+    ]
+  }
+}
