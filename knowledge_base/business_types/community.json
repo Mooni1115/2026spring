@@ -1,0 +1,48 @@
+{
+  "business_type": "community",
+  "description": "A business built around bringing together people with a shared goal, identity, interest, or challenge through membership, events, accountability, or curated interaction.",
+  "best_for": [
+    "Users who are comfortable facilitating interaction",
+    "Users who understand a specific group's recurring needs",
+    "Users who can build trust and consistency over time"
+  ],
+  "bad_for": [
+    "Users who dislike ongoing engagement responsibilities",
+    "Users who expect immediate monetization without trust-building"
+  ],
+  "common_formats": [
+    "study community",
+    "membership group",
+    "accountability cohort",
+    "interest-based club",
+    "career support circle"
+  ],
+  "revenue_models": [
+    "membership fee",
+    "cohort fee",
+    "event ticket",
+    "upsell to services or digital products"
+  ],
+  "mvp_examples": [
+    "A small pilot group with 5 to 10 members",
+    "A 2-week themed accountability challenge",
+    "A one-time paid group session"
+  ],
+  "evaluation_points": [
+    "Does the target group have a reason to return repeatedly?",
+    "Is the value created by interaction, structure, or access?",
+    "Can a small pilot group be formed without large overhead?"
+  ],
+  "major_risks": [
+    "low retention",
+    "high operator dependence",
+    "unclear paid value",
+    "community inactivity"
+  ],
+  "starter_next_steps": [
+    "Identify one narrow member segment",
+    "Define what repeat value the group offers",
+    "Run a small pilot community experiment",
+    "Measure retention and participation before expanding"
+  ]
+}
