@@ -1,3 +1,7 @@
+# profile
+2024130871
+신희문
+
 # Current Site Link
 https://mooni1115.github.io/2026spring/
 
