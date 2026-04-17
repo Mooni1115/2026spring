@@ -1,0 +1,152 @@
+{
+  "version": "1.0",
+  "description": "Rules for interpreting user profile inputs into business suitability signals.",
+  "capital_rules": {
+    "low": {
+      "preferred_models": [
+        "digital_product",
+        "education",
+        "content",
+        "service_agency",
+        "community"
+      ],
+      "avoid_models": [
+        "inventory_heavy_retail",
+        "offline_storefront",
+        "capital_intensive_manufacturing"
+      ],
+      "notes": [
+        "Prefer low fixed-cost models.",
+        "Prefer testable ideas with no inventory."
+      ]
+    },
+    "mid": {
+      "preferred_models": [
+        "education",
+        "content",
+        "service_agency",
+        "digital_product",
+        "community",
+        "small_scale_hybrid"
+      ],
+      "avoid_models": [
+        "large_offline_expansion"
+      ],
+      "notes": [
+        "Some experimentation is possible, but burn rate still matters."
+      ]
+    },
+    "high": {
+      "preferred_models": [
+        "education",
+        "content",
+        "service_agency",
+        "digital_product",
+        "community",
+        "saas",
+        "hybrid_experience"
+      ],
+      "avoid_models": [],
+      "notes": [
+        "Higher capital broadens options but does not remove validation requirements."
+      ]
+    }
+  },
+  "time_rules": {
+    "low": {
+      "preferred_models": [
+        "digital_product",
+        "content",
+        "saas"
+      ],
+      "avoid_models": [
+        "high_touch_coaching",
+        "daily_live_operations",
+        "offline_event_heavy_business"
+      ],
+      "notes": [
+        "Prefer leverage and repeatability over manual service delivery."
+      ]
+    },
+    "mid": {
+      "preferred_models": [
+        "education",
+        "content",
+        "digital_product",
+        "service_agency",
+        "saas"
+      ],
+      "avoid_models": [],
+      "notes": [
+        "A mixed model is feasible if early scope is controlled."
+      ]
+    },
+    "high": {
+      "preferred_models": [
+        "education",
+        "service_agency",
+        "community",
+        "saas",
+        "hybrid_experience"
+      ],
+      "avoid_models": [],
+      "notes": [
+        "Higher time availability allows more experimentation and customer interaction."
+      ]
+    }
+  },
+  "risk_rules": {
+    "low": {
+      "preferred_traits": [
+        "low fixed cost",
+        "easy pilot testing",
+        "clear value communication"
+      ],
+      "avoid_traits": [
+        "uncertain heavy investment",
+        "long payback period"
+      ]
+    },
+    "mid": {
+      "preferred_traits": [
+        "balanced testability and upside"
+      ],
+      "avoid_traits": []
+    },
+    "high": {
+      "preferred_traits": [
+        "novel niche ideas",
+        "higher uncertainty but higher upside"
+      ],
+      "avoid_traits": []
+    }
+  },
+  "mode_rules": {
+    "online": {
+      "preferred_models": [
+        "digital_product",
+        "content",
+        "education",
+        "saas",
+        "service_agency"
+      ]
+    },
+    "offline": {
+      "preferred_models": [
+        "education",
+        "community",
+        "hybrid_experience",
+        "service_agency"
+      ]
+    },
+    "hybrid": {
+      "preferred_models": [
+        "education",
+        "community",
+        "service_agency",
+        "hybrid_experience",
+        "digital_product"
+      ]
+    }
+  }
+}
